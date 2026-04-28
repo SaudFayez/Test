@@ -1,2 +1,2 @@
 # Test
-Development for the loyalty program 
+Building loyalty program 
