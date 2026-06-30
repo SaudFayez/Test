@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!--
+        Restricted users (Manufacturing / User) may only read/write/create/unlink
+        Manufacturing Orders whose warehouse matches their assigned warehouse.
+        MOs with no warehouse yet are also allowed so drafts/onchanges work.
+    -->
+    <record id="mrp_production_warehouse_rule_user" model="ir.rule">
+        <field name="name">Manufacturing Order: own warehouse only</field>
+        <field name="model_id" ref="mrp.model_mrp_production"/>
+        <field name="groups" eval="[(4, ref('mrp.group_mrp_user'))]"/>
+        <field name="domain_force">
+            ['|',
+                ('picking_type_id.warehouse_id', '=', user.manufacturing_warehouse_id.id),
+                ('picking_type_id.warehouse_id', '=', False)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <!--
+        Manufacturing Administrators bypass the restriction. Group rules on the
+        same model are OR-ed, so a user who is both User and Administrator can
+        access every Manufacturing Order.
+    -->
+    <record id="mrp_production_warehouse_rule_manager" model="ir.rule">
+        <field name="name">Manufacturing Order: administrators see all warehouses</field>
+        <field name="model_id" ref="mrp.model_mrp_production"/>
+        <field name="groups" eval="[(4, ref('mrp.group_mrp_manager'))]"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+</odoo>

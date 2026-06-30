@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="mrp_production_form_view_warehouse" model="ir.ui.view">
+        <field name="name">mrp.production.form.warehouse.restriction</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <field name="picking_type_id" position="before">
+                <field name="restrict_warehouse" invisible="1"/>
+            </field>
+            <!--
+                Lock the Operation Type for restricted users so they cannot switch
+                the warehouse. Standard behaviour keeps it editable only in draft.
+            -->
+            <field name="picking_type_id" position="attributes">
+                <attribute name="readonly">restrict_warehouse or state != 'draft'</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>
