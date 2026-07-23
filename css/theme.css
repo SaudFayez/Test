@@ -1,0 +1,48 @@
+:root {
+  /* Palette */
+  --bg: #0f1115;
+  --surface: #181b22;
+  --surface-2: #20242e;
+  --surface-3: #2a2f3b;
+  --border: #2c313d;
+  --text: #e8eaf0;
+  --text-dim: #9aa1b0;
+  --text-faint: #6b7280;
+
+  --accent: #4f8cff;
+  --accent-soft: rgba(79, 140, 255, 0.15);
+  --danger: #ef5b6e;
+  --danger-soft: rgba(239, 91, 110, 0.15);
+  --success: #3ecf8e;
+  --success-soft: rgba(62, 207, 142, 0.15);
+  --warning: #f5b544;
+  --warning-soft: rgba(245, 181, 68, 0.15);
+
+  /* Per-module accents */
+  --c-tasks: #4f8cff;
+  --c-projects: #b07cff;
+  --c-time: #f5b544;
+  --c-business: #3ecf8e;
+  --c-lifestyle: #ff8bd1;
+  --c-health: #ef5b6e;
+
+  /* Time-block categories */
+  --cat-work: #4f8cff;
+  --cat-business: #3ecf8e;
+  --cat-health: #ef5b6e;
+  --cat-social: #ff8bd1;
+  --cat-personal: #f5b544;
+
+  /* Spacing scale */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
