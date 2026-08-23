@@ -25,6 +25,8 @@
   --c-business: #3ecf8e;
   --c-lifestyle: #ff8bd1;
   --c-health: #ef5b6e;
+  --c-production: #cf7a35;
+  --c-production-soft: rgba(207, 122, 53, 0.15);
 
   /* Time-block categories */
   --cat-work: #4f8cff;

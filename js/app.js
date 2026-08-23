@@ -7,6 +7,7 @@ import * as tasks from "./pages/tasks.js";
 import * as projects from "./pages/projects.js";
 import * as time from "./pages/time.js";
 import * as business from "./pages/business.js";
+import * as production from "./pages/production.js";
 import * as lifestyle from "./pages/lifestyle.js";
 import * as health from "./pages/health.js";
 import * as settings from "./pages/settings.js";
@@ -19,6 +20,7 @@ defineRoutes({
   "/projects": projects.render,
   "/time": time.render,
   "/business": business.render,
+  "/production": production.render,
   "/lifestyle": lifestyle.render,
   "/health": health.render,
   "/settings": settings.render,
