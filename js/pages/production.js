@@ -253,7 +253,7 @@ function openOriginDetail(r, params) {
   const producedMonths = Object.keys(r.origin.produced || {}).sort();
   const growthFactor = 1 + params.growthPct / 100;
 
-  openModal({
+  const { body } = openModal({
     title: `${r.origin.name} — plan detail`,
     content: el(
       "div",
@@ -295,6 +295,7 @@ function openOriginDetail(r, params) {
         : null
     ),
   });
+  body.closest(".modal").style.maxWidth = "680px"; // 18-month chart needs more room than the default form modal
 }
 
 /* ---------------- History tab ---------------- */
