@@ -42,7 +42,15 @@ export const healthStore = createStore("lifeos.health", {
   workoutLog: [], // { id, date, routineId, notes, completedExercises: [exerciseId] }
 });
 
+export const roastingStore = createStore("lifeos.roasting", {
+  growthPct: 0, // manual demand growth adjustment, %
+  batchSizeKg: 15, // roaster drum capacity per batch
+  roastLossPct: 15, // green → roasted weight loss
+  safetyStockWeeks: 2, // buffer stock to keep on hand
+});
+
 export const ALL_STORES = [
+  roastingStore,
   settingsStore,
   tasksStore,
   projectsStore,
